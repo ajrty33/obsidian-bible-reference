@@ -83,7 +83,7 @@ export class VerseSuggesting implements IVerseSuggesting {
       bottom += ' %%'
     }
 
-    return [head, this.text, bottom].join('\n')
+    return [this.text, bottom].join('\n')
   }
 
   public async getVerses(): Promise<IVerse[]> {
