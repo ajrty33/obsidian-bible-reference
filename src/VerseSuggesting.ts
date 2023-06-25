@@ -41,7 +41,7 @@ export class VerseSuggesting implements IVerseSuggesting {
    * @constructor
    */
   public get ReplacementContent(): string {
-    let head = `> [!Bible]`
+    let head = ''
     let bottom = ''
     if (this.settings?.collapsibleVerses) {
       head += '-'
@@ -60,7 +60,7 @@ export class VerseSuggesting implements IVerseSuggesting {
       this.settings.referenceLinkPosition ===
         BibleVerseReferenceLinkPosition.AllAbove
     ) {
-      bottom += `> \n ${this.getVerseReference()}`
+      bottom += ` ${this.bibleProvider.BibleReferenceHead} - ${this.bibleVersion.toUpperCase()}`
     }
 
     // backlinks and tags use the BibleReferenceHeader 
